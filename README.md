@@ -1,4 +1,4 @@
-# 프로젝트명 : bank-system (입금/출금 System 구현하기)
+# 프로젝트명 : bank-system <br>(입금/출금 System 구현하기)
 
 ### 💻 개발 환경
 - OS : MacOS(M1)
