@@ -1,0 +1,45 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '2.7.12'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.ouneno'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// tomcat-jasper, javax.servlet:jstl 역할 : jsp를 처리하는 서블릿 역할을 한다고 한다.
+	implementation 'org.apache.tomcat:tomcat-jasper:9.0.58'
+	implementation 'javax.servlet:jstl:1.2'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	// myBatis
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1'
+	
+	// mysql connector
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.30'
+	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+	
+	// lombok
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
