@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ouneno.banksystem.service.user.serviceImpl.userService;
 
 @Controller
-@RestController
+@RestController 
 public class HomeController {
 
 	@Autowired
