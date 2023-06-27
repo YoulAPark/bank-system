@@ -25,16 +25,12 @@
 	</head>
   
 	<body>
+		<!-- Navigation -->
+		<%@ include file ="../views/layouts/header.jsp" %>
+	
 		<!-- Start Contents -->	
 			<div class="px-4 py-5 my-5 text-center">
-				<h1 class="display-5 fw-bold">bank-system</h1>
-				<div class="col-lg-6 mx-auto">
-					<p class="lead mb-4">반갑습니다. OOO 고객님. 저희 bank-system을 이용해주셔서 감사합니다.</p>
-				</div>
-			</div>
-		  
-		</div>
-
+			</div>		
 		<!-- End Contents -->	
 		
 		<!-- BootStrap -->
@@ -43,6 +39,9 @@
 		<!-- JQuery -->
 		<script defer src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	
+		<!-- Site info -->	
+		<%@ include file ="../views/layouts/footer.jsp" %>	
 	</body>
   
 </html>

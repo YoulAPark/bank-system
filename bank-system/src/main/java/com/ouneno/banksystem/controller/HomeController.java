@@ -17,5 +17,14 @@ public class HomeController {
 	public String main() throws Exception {
 		return "main";
 	}
+	
+	@RequestMapping("/listAccount")
+	public String listAccount() throws Exception {
+		return "/listAccount";
+	}
 
+	@RequestMapping("/getBalance")
+	public String getBalance() throws Exception {
+		return "/getBalance";
+	}
 }
