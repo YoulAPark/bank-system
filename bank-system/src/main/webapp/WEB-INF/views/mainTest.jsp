@@ -13,37 +13,38 @@
 		<title>Bootstrap demo</title>
 		
 		<!-- CSS Style Start -->
-		<style>
+		<style>	
+					
 		</style>
 		<!-- CSS Style End -->
 		
-		<script>
-			$(function() {				
-			});
+		<script>	
+			function movePage() {
+				//location.href="/listAccount";
+			}
 		</script>
 		
 	</head>
   
 	<body>
 		<!-- Start Contents -->	
-			<div class="px-4 py-5 my-5 text-center">
-				<h1 class="display-5 fw-bold">거래하기</h1>
+		
+			<div class="px-400 py-5 my-5 text-center" onclick="movePage()">
+				<h1 class="display-5 fw-bold">금융의 모든 것</h1>
+				<h4 class="display-5 fw-bold">뱅크시스템에서 쉽고 간편하게</h4>
+			</div>
+		
+			<div class="px-400 py-5 my-5 text-center" onclick="movePage()">
+				<h1 class="display-5 fw-bold">bank-system</h1>
 				<div class="col-lg-6 mx-auto">
-					<p class="lead mb-4">신한 110-123-123456</p>		
-				</div>
-				<div class="input-group mb-3 px-4 py-5 my-5">
-					<input type="text" class="form-control" placeholder="금액을 입력하세요">
-					<span class="input-group-text">원</span>
-				</div>
-				<div>			
-					<button type="button" class="btn btn-success btn-lg">입금하기</button>
-					<button type="button" class="btn btn-danger btn-lg">출금하기</button>
+					<p class="lead mb-4">반갑습니다. OOO 고객님. 저희 bank-system을 이용해주셔서 감사합니다.</p>
 				</div>
 			</div>
-		  
-		</div>
-
-		
+			
+			<div>			
+				<button type="button" class="btn btn-success btn-lg">입금하기</button>
+				<button type="button" class="btn btn-danger btn-lg">출금하기</button>
+			</div>			
 		<!-- End Contents -->	
 		
 		<!-- BootStrap -->
