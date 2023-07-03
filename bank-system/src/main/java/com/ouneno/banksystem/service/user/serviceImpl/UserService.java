@@ -1,5 +1,5 @@
 package com.ouneno.banksystem.service.user.serviceImpl;
 
-public interface userService {
+public interface UserService {
 
 }

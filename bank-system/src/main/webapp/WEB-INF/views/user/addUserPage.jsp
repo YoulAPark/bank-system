@@ -44,10 +44,9 @@
 
 	function addUser() {
 		
-		var userNickname = $("input[name='userNickname']").val();
+		var userName = $("input[name='userName']").val();
 		var userId = $("input[name='userId']").val();
 		var userPwd = $("input[name='userPwd']").val();
-		var userEmail = $("input[name='userEmail']").val();
 		var userPhone = $("input[name='userPhone']").val();
 		
 		$.ajax({
@@ -56,10 +55,9 @@
 			,	dataType : "JSON" 
 			,	contentType : "application/json"
 			,	data : JSON.stringify({
-						"userNickname" : userNickname
+						"userName" : userName
 					,	"userId" : userId
 					,	"userPwd" : userPwd
-					,	"userEmail" : userEmail
 					,	"userPhone" : userPhone
 			})
 			,	success : function() {
@@ -72,34 +70,7 @@
 	}
 
 	function validate(type) {
-		
-		if(type==1){	
-			$("#inputNickname").keyup(function(){
-				var userNickname = $("input[name='userNickname']").val();
-					$.ajax({
-						url : "/user/json/findValidate/"+type
-						,	method : "POST" 
-						,	dataType : "JSON" 
-						,	contentType : "application/json"
-						,	data : JSON.stringify({
-									"userNickname" : userNickname
-						})
-						,	success : function(data) {
-								if(data == 1) {
-									$("#nicknameCk").text("해당 닉네임은 이미 사용중입니다.");
-									$("#nicknameCk").css("color", "red");
-									return;
-								} else if (data == 0 ) {
-									$("#nicknameCk").text("사용가능한 닉네임입니다.");
-									$("#nicknameCk").css("color", "black");
-									return;
-								}
-							}, error : function() {
-							}
-					});
-			});
 			
-		} else if(type==2) {	
 			$("#inputId").keyup(function() {
 				var userId = $("input[name='userId']").val();
 				$.ajax({
@@ -121,32 +92,7 @@
 						}, error : function() {
 						}
 				});
-			});
-		
-		} else if(type==3) {
-			$("#inputEmail").keyup(function() {
-				var userEmail = $("input[name='userEmail']").val();				
-					$.ajax({
-						url : "/user/json/findValidate/"+type
-						,	method : "POST" 
-						,	dataType : "JSON" 
-						,	contentType : "application/json"
-						,	data : JSON.stringify({
-									"userEmail" : userEmail
-						})
-						,	success : function(data) {
-								if(data == 1) {
-									$("#emailCk").text("해당 이메일은 이미 사용중입니다.");
-									$("#emailCk").css("color", "red");
-								} else if (data == 0 ) {
-									$("#emailCk").text("사용가능한 이메일입니다.");
-									$("#emailCk").css("color", "black");
-								}
-							}, error : function() {
-							}
-					});
-			});
-		}
+			});		
 	}
 
 	$(function() {
@@ -206,12 +152,12 @@
 <form class="inputprod col-5 mx-auto">	 
 	
 		<label for="basic-url" class="form-label">회원가입</label>	
-		 
+		
 		<div class="form-floating">
-			<input type="text" class="form-control" name="userNickname" id="inputNickname" onclick="validate(1)" placeholder="Nickname" value="${user.userNickname}">
-			<label for="floatingNickname">닉네임</label>
+			<input type="text" class="form-control" name="userName" id="inputName" placeholder="Name" value="${user.userName}">
+			<label for="floatingName">이름</label>
 		</div>
-		<div class="ck_Font_css" id="nicknameCk"></div>
+		<div class="ck_Font_css" id="nameCk"></div>
 			
 		<div class="form-floating">
 			<input type="text" class="form-control" name="userId" id="inputId" onclick="validate(2)" placeholder="Id" value="${user.userId}">
@@ -232,15 +178,10 @@
 		<div class="ck_Font_css" id="pwdCf"></div>
 		
 		<div class="form-floating">
-			<input type="email" class="form-control" name="userEmail" id="inputEmail" onclick="validate(3)" placeholder="Email" value="${user.userEmail}">
-			<label for="floatingEmail">이메일</label>
-		</div>
-		<div class="ck_Font_css" id="emailCk"></div>
-		
-		<div class="form-floating">
 			<input type="text" class="form-control" name="userPhone" id="inputPhone" placeholder="Phone" value="${user.userPhone}">
 			<label for="floatingPhone">모바일번호</label>
 		</div>
+			
 		<div class="ck_Font_css" id="phoneCk"></div>
  
 		<div class="d-grid gap-2">
