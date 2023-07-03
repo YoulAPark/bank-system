@@ -27,6 +27,9 @@
 				$("#joinPage").on("click", function() {
 					self.location = "/user/addUserPage";
 				})
+				$("#listAccount").on("click", function() {
+					self.location = "/banking/listAccount";
+				})
 			});			
 		</script>
 		
@@ -40,6 +43,9 @@
 			<div class="px-4 py-5 my-5 text-center" onclick="movePage()">
 				<h1 class="display-5 fw-bold">금융의 모든 것</h1>
 				<h4 class="display-5 fw-bold">뱅크시스템에서 쉽고 간편하게</h4>
+			</div>
+			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+				<button type="button" id="listAccount" class="btn btn-link-dark btn-lg px-4 gap-3">거래하기</button>
 			</div>
 			<div class="px-3 py-3 text-center">
 				<button type="button" class="btn btn-link-dark" data-bs-toggle="modal" data-bs-target="#login">로그인</button>
